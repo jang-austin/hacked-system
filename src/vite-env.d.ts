@@ -8,3 +8,10 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv
 }
+
+// 전역 변수로 환경 설정
+declare global {
+  interface Window {
+    __VITE_NODE_ENV__: string;
+  }
+}
