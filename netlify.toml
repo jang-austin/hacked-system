@@ -1,6 +1,8 @@
 [build]
-  command = "npm run build"
+  command = "npm install && npm run build"
   publish = "dist"
 
 [build.environment]
   VITE_NODE_ENV = "production"
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--legacy-peer-deps"
