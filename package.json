@@ -13,7 +13,7 @@
     "npm": ">=8.0.0"
   },
   "dependencies": {
-    "@austinjang/nuclear-library": "~1.0.14",
+    "@austinjang/nuclear-library": "~1.0.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.9.3"
