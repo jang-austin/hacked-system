@@ -1,4 +1,4 @@
-declare module "hack-library" {
+declare module "@austinjang/nuclear-library" {
   import { ComponentType } from "react";
 
   interface ButtonProps {
@@ -6,6 +6,7 @@ declare module "hack-library" {
     className?: string;
     size?: "small" | "medium" | "large";
     children?: React.ReactNode;
+    disabled?: boolean;
   }
 
   export const PinkButton: ComponentType<ButtonProps>;
