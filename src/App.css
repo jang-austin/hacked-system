@@ -1,0 +1,396 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* 기본 스타일 */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.text-gray-900 {
+  color: #111827;
+}
+
+.text-gray-800 {
+  color: #1f2937;
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+
+.text-gray-400 {
+  color: #9ca3af;
+}
+
+.text-red-600 {
+  color: #dc2626;
+}
+
+.text-red-500 {
+  color: #ef4444;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.space-x-4 > * + * {
+  margin-left: 1rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+/* 반응형 */
+@media (min-width: 768px) {
+  .md\\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* 버튼 스타일 */
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* hack-library 버튼 스타일 */
+.hack-button {
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hack-button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.hack-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hack-button:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.hack-button:not(:disabled):active {
+  transform: scale(0.95);
+}
+
+/* 크기 스타일 */
+.hack-button-small {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.hack-button-medium {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.hack-button-large {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+/* 색상 variants */
+.hack-button-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.hack-button-primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.hack-button-secondary {
+  background-color: #4b5563;
+  color: white;
+}
+
+.hack-button-secondary:hover:not(:disabled) {
+  background-color: #374151;
+}
+
+.hack-button-success {
+  background-color: #059669;
+  color: white;
+}
+
+.hack-button-success:hover:not(:disabled) {
+  background-color: #047857;
+}
+
+.hack-button-danger {
+  background-color: #dc2626;
+  color: white;
+}
+
+.hack-button-danger:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+.hack-button-warning {
+  background-color: #eab308;
+  color: white;
+}
+
+.hack-button-warning:hover:not(:disabled) {
+  background-color: #ca8a04;
+}
+
+.hack-button-info {
+  background-color: #0891b2;
+  color: white;
+}
+
+.hack-button-info:hover:not(:disabled) {
+  background-color: #0e7490;
+}
+
+.hack-button-light {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.hack-button-light:hover:not(:disabled) {
+  background-color: #e5e7eb;
+}
+
+.hack-button-dark {
+  background-color: #1f2937;
+  color: white;
+}
+
+.hack-button-dark:hover:not(:disabled) {
+  background-color: #111827;
+}
+
+.hack-button-purple {
+  background-color: #9333ea;
+  color: white;
+}
+
+.hack-button-purple:hover:not(:disabled) {
+  background-color: #7c3aed;
+}
+
+.hack-button-pink {
+  background-color: #db2777;
+  color: white;
+}
+
+.hack-button-pink:hover:not(:disabled) {
+  background-color: #be185d;
+}
