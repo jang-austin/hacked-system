@@ -19,6 +19,8 @@ const MainPage: React.FC = () => {
 
   const handleLogout = () => {
     sessionStorage.removeItem("nickname");
+    // SessionStorage 변경 이벤트 발생
+    window.dispatchEvent(new Event("sessionStorageChange"));
     navigate("/login");
   };
 
@@ -27,16 +29,19 @@ const MainPage: React.FC = () => {
 
     // 일반 버튼들은 hacked-backend로 요청 전송
     try {
-      const response = await fetch("http://localhost:8082/api/button-click", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          buttonType: buttonName.toLowerCase().replace("button", ""),
-          nickname: nickname,
-        }),
-      });
+      const response = await fetch(
+        "https://hacked-backend.onrender.com/api/button-click",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            buttonType: buttonName.toLowerCase().replace("button", ""),
+            nickname: nickname,
+          }),
+        }
+      );
 
       if (response.ok) {
         console.log(`${buttonName} 클릭이 hacked-backend로 전송됨`);

@@ -7,13 +7,35 @@ import "./App.css";
 const App: React.FC = () => {
   const [isAuth, setIsAuth] = useState<boolean | null>(null);
 
-  useEffect(() => {
-    // SessionStorage에서 nickname 확인
+  // 인증 상태 확인 함수
+  const checkAuth = () => {
     const nickname = sessionStorage.getItem("nickname");
-    console.log("SessionStorage nickname:", nickname);
-    setIsAuth(nickname !== null);
+    const authStatus = nickname !== null;
+    setIsAuth(authStatus);
+    return authStatus;
+  };
+
+  useEffect(() => {
+    checkAuth();
   }, []);
-  console.log("isAuth:", isAuth);
+
+  // SessionStorage 변경 감지
+  useEffect(() => {
+    const handleStorageChange = () => {
+      checkAuth();
+    };
+
+    // storage 이벤트 (다른 탭에서 변경)
+    window.addEventListener("storage", handleStorageChange);
+
+    // custom 이벤트 (같은 탭에서 변경)
+    window.addEventListener("sessionStorageChange", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("sessionStorageChange", handleStorageChange);
+    };
+  }, []);
 
   // 로딩 중일 때는 아무것도 렌더링하지 않음
   if (isAuth === null) {
@@ -22,6 +44,10 @@ const App: React.FC = () => {
 
   return (
     <Routes>
+      <Route
+        path="/"
+        element={<Navigate to={isAuth ? "/index" : "/login"} replace />}
+      />
       <Route
         path="/login"
         element={isAuth ? <Navigate to="/index" replace /> : <LoginPage />}

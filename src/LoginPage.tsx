@@ -9,6 +9,8 @@ const LoginPage: React.FC = () => {
     e.preventDefault();
     if (nickname.trim()) {
       sessionStorage.setItem("nickname", nickname.trim());
+      // SessionStorage 변경 이벤트 발생
+      window.dispatchEvent(new Event("sessionStorageChange"));
       navigate("/index");
     }
   };
